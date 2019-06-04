@@ -1,10 +1,28 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar'
 
-function Score (props) {
+class Score extends React.Component () {
+    constructor(props) {
+        super(props);
+        this.state = {
+            CurrentScore: 0,
+            TopScore:0
+        };
+    }    
+
+componentDidMount() {
+
+}
+
+componentWillUnmount() {
+
+}
+
+render(){
     return (
-        <Navbar.Text> Score: {props.score} | Top Score: {props.topscore} </Navbar.Text>
+        // <Navbar.Text> Score: {this.state.CurrentScore} Top Score: {this.state.TopScore} </Navbar.Text>
+        <p>text</p>
     );
+}
 }
 
 export default Score

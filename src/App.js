@@ -6,7 +6,7 @@ import Jumbotron from './components/Jumbotron.jsx';
 function App() {
   return (
     <div className="App">
-      <Nav score={0} topscore={0}/>
+      <Nav />
       <Jumbotron />
     </div>
   );

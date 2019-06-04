@@ -1,13 +1,15 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar'
-import Score from './Score';
+import Counter from './Counter';
 
 function Nav(props) {
     return (
         <Navbar bg="light">
         <Navbar.Brand href="#home">Clicky Game</Navbar.Brand>
         <Navbar.Text>Click an image to begin!</Navbar.Text>
-        <Score score={props.score} topscore={props.topscore} />
+        {/* <Score score={props.CurrentScore} topscore={props.TopScore} />
+         */}
+         <Counter score={4} TopScore={6}/>
         </Navbar>
         );
 }
