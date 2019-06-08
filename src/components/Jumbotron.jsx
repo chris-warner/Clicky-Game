@@ -1,28 +1,29 @@
 import React from 'react';
-import {Jumbotron, Image} from 'react-bootstrap';
+import { Jumbotron, Image } from 'react-bootstrap';
 import background from '../img/background.jpg';
 
-function ReactJumbotron () {
+function ReactJumbotron() {
     return (
         <Jumbotron style={jumbotronStyle}>
-              <h1>Clicky Game</h1>
-              <h2>Click on an image to earn points, but don't click on any more than once!</h2>
-            {/* <Image src={background} alt={"background"}  style={imgStyle}/>     */}
+            <h1>Clicky Game</h1>
+            <h2 style={centerText}>Click on an image to earn points, but don't click on any more than once!</h2>
         </Jumbotron>
-        );
+    );
+}
+
+const jumbotronStyle = {
+    height: '400px',
+    backgroundImage: 'url(' + background + ')',
+    backgroundSize: 'cover',
+    align: 'center',
+    color: 'white',
 
 }
- const jumbotronStyle = {
-     height:'400px',
-     backgroundImage:background,
-     backgroundSize: 'cover',
-     align: 'center'
- }
-
- const imgStyle = {
-     height:'100%',
-     width:'100%',
-     margin:'auto',
- }
+const centerText = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+   // marginTop:'100px'
+}
 
 export default ReactJumbotron
