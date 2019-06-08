@@ -19,6 +19,13 @@
   color: white;
 }
 
+Counter {
+  display: inline-block;
+  width: 33.3%;
+    vertical-align: middle;
+  text-align: center;
+  }
+  
 .App-link {
   color: #61dafb;
 }

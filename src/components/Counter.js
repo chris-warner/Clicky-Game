@@ -10,7 +10,11 @@ class Counter extends React.Component {
   }
 
   render() {
-    return (<Navbar.Text> Score: {this.state.score} Top Score: {this.state.TopScore} </Navbar.Text>);
+    return (
+    <Navbar.Text style={navCounter}>  
+    Score: {this.state.score} 
+    Top Score: {this.state.TopScore} 
+    </Navbar.Text>);
   }
 
   componentDidMount() {
@@ -21,6 +25,11 @@ class Counter extends React.Component {
   componentDidUpdate() {
       
   }
+  
 }
+const navCounter = {
+  margin:'0 auto',
+  float: 'none'
 
+}
 export default Counter;

@@ -16,14 +16,13 @@ const jumbotronStyle = {
     backgroundImage: 'url(' + background + ')',
     backgroundSize: 'cover',
     align: 'center',
-    color: 'white',
+    color: 'white', 
 
 }
 const centerText = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-   // marginTop:'100px'
 }
 
 export default ReactJumbotron
