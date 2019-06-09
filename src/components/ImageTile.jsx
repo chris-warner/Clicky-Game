@@ -21,7 +21,7 @@ function ImageTile() {
 
     return (
         <div style={tileStyle}>
-            <p>imageTile</p>
+            <p>{getRandomInt(12)}</p>
         </div>
     );
 }
