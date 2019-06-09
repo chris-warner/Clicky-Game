@@ -19,8 +19,12 @@ class ImageTile extends React.Component {
         this.clicked = 0;
     }
     
+    
     render() {
-        const imageArray = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12];
+    const imageArray = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12];
+       const shuffledImageArray = shuffle(imageArray);
+       console.log(shuffledImageArray);
+
         function getRandomInt(max) {
             return Math.floor(Math.random() * Math.floor(max));
         }
@@ -28,16 +32,33 @@ class ImageTile extends React.Component {
         return (
             <div style={tileStyle}>
                 <p>{getRandomInt(12)}</p>
-                <Image style={imageStyle} src={[imageArray[getRandomInt(12)]]}></Image>
+                <Image style={imageStyle} src={[shuffledImageArray[getRandomInt(12)]]}></Image>
             </div>
         );
     }
 }
-const imageArray = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12];
         function getRandomInt(max) {
             return Math.floor(Math.random() * Math.floor(max));
         }
         console.log(getRandomInt(12));
+        function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
 const imageStyle = {
     height: '150px',
     width: '150px',
