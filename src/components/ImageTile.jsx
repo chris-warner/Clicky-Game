@@ -31,7 +31,8 @@ function ImageTile() {
 
 const imageStyle = {
     height:'150px',
-    width:'150px'
+    width:'150px',
+    color:'white'
 }
 
 const tileStyle = {
@@ -40,7 +41,8 @@ const tileStyle = {
     backgroundColor: 'Black',
     borderColor: 'black',
     borderWidth: '2px',
-    borderStyle: 'inline'
+    borderStyle: 'inline',
+    color:'white'
 }
 
 export default ImageTile;
