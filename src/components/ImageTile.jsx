@@ -13,7 +13,7 @@ import image10 from '../img/galaxy10.jpg';
 import image11 from '../img/galaxy11.jpg';
 import image12 from '../img/galaxy12.jpg';
 
-class ImageTile extends React.Component {
+class ImageTile extends React.PureComponent {
     constructor(props) {
         super(props);
         this.clicked = 0;
@@ -31,8 +31,8 @@ class ImageTile extends React.Component {
         console.log(getRandomInt(12));
         return (
             <div style={tileStyle}>
-                <p>{getRandomInt(12)}</p>
-                <Image style={imageStyle} src={[shuffledImageArray[getRandomInt(12)]]}></Image>
+                <p > {this.clicked}</p>
+                <Image  onClick={this.clicked++} style={imageStyle} src={[shuffledImageArray[getRandomInt(12)]]}></Image>
             </div>
         );
     }
