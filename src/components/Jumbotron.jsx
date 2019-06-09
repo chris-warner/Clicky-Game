@@ -17,8 +17,8 @@ const jumbotronStyle = {
     backgroundSize: 'cover',
     align: 'center',
     color: 'white', 
-
 }
+
 const centerText = {
     display: 'flex',
     justifyContent: 'center',

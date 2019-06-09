@@ -4,16 +4,16 @@ import Counter from './Counter';
 
 function Nav(props) {
     return (        
-        <Navbar bg="light">
+        <Navbar fluid bg="light">
         <Navbar.Brand href="#home">Clicky Game</Navbar.Brand>
         <Navbar.Text>Click an image to begin! </Navbar.Text>
-        <Counter style={counterStyle}score={4} TopScore={6}/>
+        <Counter style={counterStyle} score={4} TopScore={6}/>
         </Navbar>
         );
 }
 
 const counterStyle = {
-  margin:'auto',
+  margin:'0 auto'
 }
 
 export default Nav

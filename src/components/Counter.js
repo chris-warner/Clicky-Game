@@ -6,7 +6,8 @@ class Counter extends React.Component {
     super(props);
     this.state = { 
         score: 0,
-        TopScore: 0 };
+        TopScore: 0 
+      };
   }
 
   render() {
@@ -29,7 +30,9 @@ class Counter extends React.Component {
 }
 const navCounter = {
   margin:'0 auto',
-  float: 'none'
+  float: 'none',
+  position:'absolute',
+  right:'10px'
 
 }
 export default Counter;
