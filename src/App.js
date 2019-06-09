@@ -11,7 +11,7 @@ function App() {
       <Nav />
       <Jumbotron />
       <Container>
-        <Row style={rowStyle}>
+        <Row style={rowStyle} className="justify-content-md-center">
           <Col style={colStyle}>1 of 3 <ImageTile /></Col>
           <Col style={colStyle}>2 of 3 <ImageTile /></Col>
           <Col style={colStyle}>3 of 3 <ImageTile /></Col>
@@ -22,7 +22,7 @@ function App() {
           <Col style={colStyle}>3 of 3 <ImageTile /></Col>
         </Row>
         <Row style={rowStyle}>
-          <Col style={colStyle} >1 of 3 <ImageTile /></Col>
+          <Col style={colStyle}>1 of 3 <ImageTile /></Col>
           <Col style={colStyle}>2 of 3 <ImageTile /></Col>
           <Col style={colStyle}>3 of 3 <ImageTile /></Col>
         </Row>
