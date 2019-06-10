@@ -13,6 +13,9 @@ import image10 from '../img/galaxy10.jpg';
 import image11 from '../img/galaxy11.jpg';
 import image12 from '../img/galaxy12.jpg';
 import {Image} from 'react-bootstrap';
+import {Navbar,Jumbotron} from 'react-bootstrap';
+import Counter from './Counter';
+import background from '../img/background.jpg';
 
 function ImageGrid () {
 
@@ -42,6 +45,16 @@ function ImageGrid () {
         return array;
       }
         return (
+          <div>
+          <Navbar fluid bg="light">
+          <Navbar.Brand href="#home">Clicky Game</Navbar.Brand>
+          <Navbar.Text>Click an image to begin! </Navbar.Text>
+          <Counter style={counterStyle} score={4} TopScore={6}/>
+          </Navbar>
+          <Jumbotron style={jumbotronStyle}>
+            <h1>Clicky Game</h1>
+            <h2 style={centerText}>Click on an image to earn points, but don't click on any more than once!</h2>
+        </Jumbotron>
             <Container>
             <Row style={rowStyle} className="justify-content-md-center">
               <Col style={colStyle}>1 of 3 <Image style={imgStyle} src={shuffledImageArray[0]}/> </Col>
@@ -59,12 +72,13 @@ function ImageGrid () {
               <Col style={colStyle}>3 of 3 <Image style={imgStyle} src={shuffledImageArray[8]}/></Col>
             </Row>
           </Container>
+          </div>
         );
     }
 
     const imgStyle ={
-      height: '100px',
-      width:'100px'
+      height: '200px',
+      width:'200px'
     }
 
 const colStyle = {
@@ -76,5 +90,24 @@ const colStyle = {
     height: '300px',
      width:'100%'
   }
+  const counterStyle = {
+    margin:'0 auto'
+  }
+
+const jumbotronStyle = {
+  height: '400px',
+  backgroundImage: 'url(' + background + ')',
+  backgroundSize: 'cover',
+  align: 'center',
+  color: 'white', 
+}
+
+const centerText = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+}
+
+  
 
 export default ImageGrid;
