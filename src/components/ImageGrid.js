@@ -1,6 +1,5 @@
 import React, {useState,useEffect} from 'react'
 import {Row,Col,Container} from 'react-bootstrap';
-import ImageTile from './ImageTile'
 import image1 from '../img/galaxy1.jpg';
 import image2 from '../img/galaxy2.jpg';
 import image3 from '../img/galaxy3.jpeg';
