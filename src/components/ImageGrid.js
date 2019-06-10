@@ -18,69 +18,91 @@ import Counter from './Counter';
 import background from '../img/background.jpg';
 
 function ImageGrid() { 
-  const score=0, TopScore=0;
+  let score=0, TopScore=0;
 
   let imageObject1,imageObject2,imageObject3,imageObject4,imageObject5,imageObject6,imageObject7,imageObject8,imageObject9,imageObject10,imageObject11,imageObject12;
+  const imageArray = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12];
 
   const imageObjectArray = [
 
       imageObject1 = {
+        key:1,
       image: image1,
       isClicked:false
     },
     imageObject2 = {
+      key:2,
       image: image2,
       isClicked:false
     },
     imageObject3 = {
+      key:3,
       image: image3,
       isClicked:false
     },
     imageObject4 = {
+      key:4,
       image: image4,
       isClicked:false
     },
     imageObject5 = {
+      key:5,
       image: image5,
       isClicked:false
     },
     imageObject6 = {
+      key:6,
       image: image6,
       isClicked:false
     },
     imageObject7 = {
+      key:7,
       image: image7,
       isClicked:false
     },
     imageObject8 = {
+      key:8,
       image: image8,
       isClicked:false
     },
     imageObject9 = {
+      key:9,
       image: image9,
       isClicked:false
     },
     imageObject10 = {
+      key:10,
       image: image10,
       isClicked:false
     },
     imageObject11 = {
+      key:11,
       image: image11,
       isClicked:false
     },
     imageObject12 = {
+      key:12,
       image: image12,
       isClicked:false
     }
   ];
-
-  const imageArray = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12];
   
   let shuffledImageArray = shuffle(imageObjectArray);
-
+  // let that = this;
   //Call this on image click.
   function shuffleImages() {
     shuffledImageArray = shuffle(imageArray);
+  }
+
+  function checkScore (key){
+    console.log(key )
+    for (let item of shuffledImageArray) {
+      if (item.key === key) {
+        item.isClicked = true;
+      }
+    }
+    const newShuffle = shuffle(shuffledImageArray)
+    console.log(newShuffle)
   }
 
   function shuffle(array) {
@@ -102,6 +124,7 @@ function ImageGrid() {
     return array;
   }
   return (
+
     <div>
       <Navbar fluid bg="light">
         <Navbar.Brand href="#home">Clicky Game</Navbar.Brand>
@@ -114,19 +137,20 @@ function ImageGrid() {
       </Jumbotron>
       <Container>
         <Row style={rowStyle} className="justify-content-md-center">
-          <Col style={colStyle}>1 of 3 <Image style={imgStyle} src={shuffledImageArray[0].image} /> </Col>
-          <Col style={colStyle}>2 of 3 <Image style={imgStyle} src={shuffledImageArray[1].image} /> </Col>
-          <Col style={colStyle}>3 of 3 <Image style={imgStyle} src={shuffledImageArray[2].image} /> </Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[0].image} onClick={()=>checkScore(shuffledImageArray[0].key)} /> </Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[0].image} /> </Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[1].image} /> </Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[2].image} /> </Col>
         </Row>
         <Row style={rowStyle}>
-          <Col style={colStyle}>1 of 3 <Image style={imgStyle} src={shuffledImageArray[3].image} /></Col>
-          <Col style={colStyle}>2 of 3 <Image style={imgStyle} src={shuffledImageArray[4].image} /></Col>
-          <Col style={colStyle}>3 of 3 <Image style={imgStyle} src={shuffledImageArray[5].image} /></Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[3].image} /></Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[4].image} /></Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[5].image} /></Col>
         </Row>
         <Row style={rowStyle}>
-          <Col style={colStyle}>1 of 3 <Image style={imgStyle} src={shuffledImageArray[6].image} /></Col>
-          <Col style={colStyle}>2 of 3 <Image style={imgStyle} src={shuffledImageArray[7].image} /></Col>
-          <Col style={colStyle}>3 of 3 <Image style={imgStyle} src={shuffledImageArray[8].image} /></Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[6].image} /></Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[7].image} /></Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[8].image} /></Col>
         </Row>
       </Container>
     </div>
