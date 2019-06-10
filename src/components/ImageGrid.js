@@ -110,7 +110,7 @@ function ImageGrid() {
       </Jumbotron>
       <Container>
         <Row style={rowStyle} className="justify-content-md-center">
-          <Col style={colStyle}>1 of 3 <Image style={imgStyle} src={shuffledImageArray[0].image} /> </Col>
+          <Col style={colStyle}>1 of 3 <Image style={imgStyle} onClick={alert("test")} src={shuffledImageArray[0].image} /> </Col>
           <Col style={colStyle}>2 of 3 <Image style={imgStyle} src={shuffledImageArray[1].image} /> </Col>
           <Col style={colStyle}>3 of 3 <Image style={imgStyle} src={shuffledImageArray[2].image} /> </Col>
         </Row>
