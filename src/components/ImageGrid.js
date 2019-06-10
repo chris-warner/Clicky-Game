@@ -17,8 +17,10 @@ import { Navbar, Jumbotron } from 'react-bootstrap';
 import Counter from './Counter';
 import background from '../img/background.jpg';
 
-function ImageGrid() {  
-  var imageObject1,imageObject2,imageObject3,imageObject4,imageObject5,imageObject6,imageObject7,imageObject8,imageObject9,imageObject10,imageObject11,imageObject12;
+function ImageGrid() { 
+  const score=0, TopScore=0;
+
+  let imageObject1,imageObject2,imageObject3,imageObject4,imageObject5,imageObject6,imageObject7,imageObject8,imageObject9,imageObject10,imageObject11,imageObject12;
 
   const imageObjectArray = [
 
@@ -73,8 +75,10 @@ function ImageGrid() {
   ];
 
   const imageArray = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12];
+  
   let shuffledImageArray = shuffle(imageObjectArray);
 
+  //Call this on image click.
   function shuffleImages() {
     shuffledImageArray = shuffle(imageArray);
   }
@@ -102,7 +106,7 @@ function ImageGrid() {
       <Navbar fluid bg="light">
         <Navbar.Brand href="#home">Clicky Game</Navbar.Brand>
         <Navbar.Text>Click an image to begin! </Navbar.Text>
-        <Counter style={counterStyle} score={4} TopScore={6} />
+        <Counter style={counterStyle} score={score} TopScore={TopScore} />
       </Navbar>
       <Jumbotron style={jumbotronStyle}>
         <h1>Clicky Game</h1>
@@ -110,7 +114,7 @@ function ImageGrid() {
       </Jumbotron>
       <Container>
         <Row style={rowStyle} className="justify-content-md-center">
-          <Col style={colStyle}>1 of 3 <Image style={imgStyle} onClick={alert("test")} src={shuffledImageArray[0].image} /> </Col>
+          <Col style={colStyle}>1 of 3 <Image style={imgStyle} src={shuffledImageArray[0].image} /> </Col>
           <Col style={colStyle}>2 of 3 <Image style={imgStyle} src={shuffledImageArray[1].image} /> </Col>
           <Col style={colStyle}>3 of 3 <Image style={imgStyle} src={shuffledImageArray[2].image} /> </Col>
         </Row>
