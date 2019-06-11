@@ -45,8 +45,6 @@ class ImageGrid extends React.Component {
           item.isClicked = true;
         }
       }
-
-
       const newShuffle = shuffle(shuffledImageArray);
       this.forceUpdate();
       console.log(newShuffle)
@@ -160,7 +158,7 @@ class ImageGrid extends React.Component {
           <Navbar.Text style={navCounter}>
             Score: {score}
             Top Score: {TopScore}
-          </Navbar.Text>);
+          </Navbar.Text>
         </Navbar>
         <Jumbotron style={jumbotronStyle}>
           <h1>Clicky Game</h1>
