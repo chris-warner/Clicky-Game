@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Row, Col, Container } from 'react-bootstrap';
 import image1 from '../img/galaxy1.jpg';
 import image2 from '../img/galaxy2.jpg';
@@ -17,11 +17,25 @@ import { Navbar, Jumbotron } from 'react-bootstrap';
 import Counter from './Counter';
 import background from '../img/background.jpg';
 
-function ImageGrid() { 
+class ImageGrid extends React.Component { 
+  constructor(props) {
+    super(props);
+    this.state = {
+      score: 0,
+      TopScore: 0
+    };
+
+  }
+
+
+  render() {
+    
   let score=0, TopScore=0;
 
   let imageObject1,imageObject2,imageObject3,imageObject4,imageObject5,imageObject6,imageObject7,imageObject8,imageObject9,imageObject10,imageObject11,imageObject12;
   const imageArray = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12];
+
+
 
   const imageObjectArray = [
 
@@ -88,13 +102,12 @@ function ImageGrid() {
   ];
   
   let shuffledImageArray = shuffle(imageObjectArray);
-  // let that = this;
-  //Call this on image click.
+
   function shuffleImages() {
     shuffledImageArray = shuffle(imageArray);
   }
 
-  function checkScore (key){
+   const checkScore = (key) => {
     console.log(key )
     for (let item of shuffledImageArray) {
       if (item.key === key) {
@@ -103,6 +116,14 @@ function ImageGrid() {
     }
     const newShuffle = shuffle(shuffledImageArray)
     console.log(newShuffle)
+    this.state.score = score+1; 
+    console.log(this.state.score);
+    this.forceUpdate();
+  }
+
+  this.componentDidUpdate = ()=>{
+    console.log("updated");
+
   }
 
   function shuffle(array) {
@@ -124,7 +145,6 @@ function ImageGrid() {
     return array;
   }
   return (
-
     <div>
       <Navbar fluid bg="light">
         <Navbar.Brand href="#home">Clicky Game</Navbar.Brand>
@@ -137,8 +157,7 @@ function ImageGrid() {
       </Jumbotron>
       <Container>
         <Row style={rowStyle} className="justify-content-md-center">
-          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[0].image} onClick={()=>checkScore(shuffledImageArray[0].key)} /> </Col>
-          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[0].image} /> </Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[0].image} onClick={()=>{checkScore(shuffledImageArray[0].key); this.state.score= score+1;}} /> </Col>
           <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[1].image} /> </Col>
           <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[2].image} /> </Col>
         </Row>
@@ -155,6 +174,7 @@ function ImageGrid() {
       </Container>
     </div>
   );
+};
 }
 
 const imgStyle = {
