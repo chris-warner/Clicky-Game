@@ -115,8 +115,10 @@ class ImageGrid extends React.Component {
     }
     const newShuffle = shuffle(shuffledImageArray)
     console.log(newShuffle)
-    this.state.score = score+1; 
-    console.log(this.state.score);
+   // this.state.score = this.state.score+1; 
+    score++;
+
+    console.log(score);
     this.forceUpdate();
   }
 
@@ -143,6 +145,7 @@ class ImageGrid extends React.Component {
 
     return array;
   }
+
   return (
     <div>
       <Navbar fluid bg="light">
@@ -156,19 +159,19 @@ class ImageGrid extends React.Component {
       </Jumbotron>
       <Container>
         <Row style={rowStyle} className="justify-content-md-center">
-          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[0].image} onClick={()=>{checkScore(shuffledImageArray[0].key); score++}} /> </Col>
-          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[1].image} /> </Col>
-          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[2].image} /> </Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[0].image} onClick={()=>{checkScore(shuffledImageArray[0].key)}} /> </Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[1].image} onClick={()=>{checkScore(shuffledImageArray[1].key)}}/> </Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[2].image} onClick={()=>{checkScore(shuffledImageArray[2].key)}}/> </Col>
         </Row>
         <Row style={rowStyle}>
-          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[3].image} /></Col>
-          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[4].image} /></Col>
-          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[5].image} /></Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[3].image} onClick={()=>{checkScore(shuffledImageArray[3].key)}}/></Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[4].image} onClick={()=>{checkScore(shuffledImageArray[4].key)}}/></Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[5].image} onClick={()=>{checkScore(shuffledImageArray[5].key)}}/></Col>
         </Row>
         <Row style={rowStyle}>
-          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[6].image} /></Col>
-          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[7].image} /></Col>
-          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[8].image} /></Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[6].image} onClick={()=>{checkScore(shuffledImageArray[6].key)}}/></Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[7].image} onClick={()=>{checkScore(shuffledImageArray[7].key)}}/></Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[8].image} onClick={()=>{checkScore(shuffledImageArray[8].key)}}/></Col>
         </Row>
       </Container>
     </div>
@@ -208,6 +211,6 @@ const centerText = {
   alignItems: 'center',
 }
 
-
+let score=0, TopScore=0;
 
 export default ImageGrid;

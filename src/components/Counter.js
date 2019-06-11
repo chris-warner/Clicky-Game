@@ -24,7 +24,7 @@ class Counter extends React.Component {
   }
 
   componentDidUpdate() {
-      
+
   }
   
 }
