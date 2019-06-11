@@ -29,8 +29,7 @@ class ImageGrid extends React.Component {
 
 
   render() {
-    
-  let score=0, TopScore=0;
+
 
   let imageObject1,imageObject2,imageObject3,imageObject4,imageObject5,imageObject6,imageObject7,imageObject8,imageObject9,imageObject10,imageObject11,imageObject12;
   const imageArray = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12];
@@ -157,7 +156,7 @@ class ImageGrid extends React.Component {
       </Jumbotron>
       <Container>
         <Row style={rowStyle} className="justify-content-md-center">
-          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[0].image} onClick={()=>{checkScore(shuffledImageArray[0].key); this.state.score= score+1;}} /> </Col>
+          <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[0].image} onClick={()=>{checkScore(shuffledImageArray[0].key); score++}} /> </Col>
           <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[1].image} /> </Col>
           <Col style={colStyle}><Image style={imgStyle} src={shuffledImageArray[2].image} /> </Col>
         </Row>
