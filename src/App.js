@@ -1,15 +1,8 @@
-import React from 'react';
-import './App.css';
-import ImageGrid from './components/ImageGrid.js';
+import React from "react";
+import Game from "./components/Game";
 
-function App() {  
-  // Used like so
-
-  return (
-    <div className="App">
-      <ImageGrid />
-    </div>
-  );
+function App() {
+  return <Game />;
 }
 
 export default App;
